@@ -60,8 +60,8 @@ EOT
     root_squash = optional(object({
       mode           = string
       no_squash_nids = string
-      squash_gid     = optional(number, 0)
-      squash_uid     = optional(number, 0)
+      squash_gid     = optional(number) # Default: 0
+      squash_uid     = optional(number) # Default: 0
     }))
   }))
 }
