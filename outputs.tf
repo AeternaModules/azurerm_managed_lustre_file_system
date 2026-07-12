@@ -1,3 +1,7 @@
+output "managed_lustre_file_systems_id" {
+  description = "Map of id values across all managed_lustre_file_systems, keyed the same as var.managed_lustre_file_systems"
+  value       = { for k, v in azurerm_managed_lustre_file_system.managed_lustre_file_systems : k => v.id }
+}
 output "managed_lustre_file_systems_encryption_key" {
   description = "Map of encryption_key values across all managed_lustre_file_systems, keyed the same as var.managed_lustre_file_systems"
   value       = { for k, v in azurerm_managed_lustre_file_system.managed_lustre_file_systems : k => v.encryption_key }
